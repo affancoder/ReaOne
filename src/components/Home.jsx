@@ -30,16 +30,16 @@ function Home() {
   };
 
   useEffect(() => {
-  const handleScroll = () => {
-    setScrolled(window.scrollY > 20);
-  };
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
 
-  window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
-  return () => {
-    window.removeEventListener("scroll", handleScroll);
-  };
-}, []);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <main className="home">
@@ -595,6 +595,28 @@ function Home() {
         <div className="stat-item">
           <strong>25</strong>
           <span>YEARS WARRANTY</span>
+        </div>
+      </section>
+
+      {/* Energy Solution Section */}
+      <section className="energy-section">
+        <div className="energy-overlay"></div>
+
+        <div className="energy-content">
+          <h2>Everything You Need. In ONE Solution</h2>
+
+          <h3>
+            Transform your energy future with a complete solar and battery
+            solution.
+          </h3>
+
+          <p>
+            REA One brings solar and battery together as a single, intelligent
+            ecosystem. One system that learns your patterns. One solution that
+            stores what you need. One source of power when the grid can't
+            deliver. Lower your bills. Eliminate outages. Scale as your life
+            grows. This is energy independence, by design.
+          </p>
         </div>
       </section>
     </main>
