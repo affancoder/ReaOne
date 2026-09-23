@@ -1,0 +1,741 @@
+/* ========================================
+   NAVBAR
+======================================== */
+
+.navbar {
+  position: fixed;
+  top: 44px;
+  left: 0;
+  z-index: 100;
+
+  width: 100%;
+  height: 92px;
+  padding: 0 3.5%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  color: #fff;
+}
+
+
+/* ========================================
+   LOGO
+======================================== */
+
+.navbar-logo {
+  display: block;
+  flex-shrink: 0;
+}
+
+.navbar-logo img {
+  display: block;
+  width: 140px;
+  height: auto;
+}
+
+
+/* ========================================
+   DESKTOP NAVIGATION
+======================================== */
+
+.navbar-links {
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-item {
+  position: relative;
+
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+
+  cursor: pointer;
+}
+
+.nav-item > span {
+  transition: color 0.2s ease;
+}
+
+.nav-item:hover > span {
+  color: #20a9d8;
+}
+
+
+/* ========================================
+   DESKTOP ACTIONS
+======================================== */
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.navbar-actions button {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+
+  background: transparent;
+  color: #fff;
+
+  font-size: 15px;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.navbar-actions button:hover {
+  background-color: #fff;
+  color: #111;
+}
+
+
+/* ========================================
+   DESKTOP DROPDOWN
+======================================== */
+
+.nav-dropdown {
+  position: static;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 92px;
+  left: 0;
+
+  width: 100%;
+  min-height: 300px;
+  padding: 45px 7%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+
+  background: #fff;
+  color: #111;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transform: translateY(-8px);
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s ease;
+}
+
+.nav-dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+
+/* Dropdown Products */
+
+.dropdown-products {
+  display: flex;
+  align-items: flex-start;
+  gap: 70px;
+}
+
+.dropdown-product {
+  width: 150px;
+  text-align: center;
+}
+
+.dropdown-product img {
+  display: block;
+
+  width: 120px;
+  height: 140px;
+
+  margin: 0 auto 18px;
+
+  object-fit: contain;
+}
+
+.dropdown-product h3 {
+  margin: 0 0 14px;
+
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.dropdown-product a {
+  color: #222;
+  font-size: 14px;
+  text-decoration: none;
+
+  transition: color 0.2s ease;
+}
+
+.dropdown-product a:hover {
+  color: #20a9d8;
+}
+
+
+/* Dropdown Links */
+
+.dropdown-links {
+  min-width: 220px;
+  padding-left: 28px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  border-left: 1px solid #d4d4d4;
+}
+
+.dropdown-links a {
+  color: #111;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+
+  transition: color 0.2s ease;
+}
+
+.dropdown-links a:hover {
+  color: #20a9d8;
+}
+
+
+/* ========================================
+   HERO OVERLAY WHEN DESKTOP DROPDOWN OPENS
+======================================== */
+
+.home:has(.nav-dropdown:hover) .hero-overlay {
+  background: rgba(0, 0, 0, 0.68);
+}
+
+
+/* ========================================
+   MOBILE HAMBURGER
+======================================== */
+
+.mobile-menu-button {
+  display: none;
+
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+
+  border: 0;
+  background: transparent;
+
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+
+  cursor: pointer;
+}
+
+.mobile-menu-button span {
+  display: block;
+
+  width: 100%;
+  height: 2px;
+
+  background: #fff;
+}
+
+
+/* ========================================
+   MOBILE MENU
+======================================== */
+
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+
+  width: 100%;
+  height: 100svh;
+
+  overflow: hidden;
+
+  background: #fff;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transform: translateX(100%);
+
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+}
+
+.mobile-menu.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+
+  transform: translateX(0);
+}
+
+
+/* ========================================
+   MOBILE MENU PAGES
+======================================== */
+
+.mobile-menu-page {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #fff;
+
+  transform: translateX(100%);
+
+  transition: transform 0.3s ease;
+}
+
+.mobile-menu-page.active {
+  transform: translateX(0);
+}
+
+
+/* Main page stays at the front */
+
+.mobile-main-page {
+  transform: translateX(0);
+}
+
+.mobile-main-page:not(.active) {
+  transform: translateX(-30%);
+}
+
+
+/* ========================================
+   MOBILE HEADER
+======================================== */
+
+.mobile-menu-header {
+  height: 64px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mobile-menu-header img {
+  display: block;
+  width: 110px;
+  height: auto;
+}
+
+.mobile-menu-close {
+  width: 40px;
+  height: 40px;
+
+  padding: 0;
+
+  border: 0;
+  background: transparent;
+
+  color: #111;
+
+  font-size: 34px;
+  font-weight: 300;
+  line-height: 1;
+
+  cursor: pointer;
+}
+
+
+/* ========================================
+   MOBILE MAIN LINKS
+======================================== */
+
+.mobile-main-links {
+  flex: 1;
+
+  margin-top: 30px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-main-links button,
+.mobile-main-links a {
+  width: 100%;
+  min-height: 64px;
+
+  padding: 16px 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border: 0;
+  border-bottom: 1px solid #e5e5e5;
+
+  background: transparent;
+  color: #111;
+
+  font-family: inherit;
+  font-size: 21px;
+  font-weight: 500;
+
+  text-align: left;
+  text-decoration: none;
+
+  cursor: pointer;
+}
+
+.mobile-main-links button span:last-child {
+  color: #888;
+  font-size: 28px;
+  font-weight: 300;
+}
+
+.mobile-main-links a {
+  transition: color 0.2s ease;
+}
+
+.mobile-main-links a:hover {
+  color: #20a9d8;
+}
+
+
+/* ========================================
+   MOBILE INNER PAGE HEADER
+======================================== */
+
+.mobile-inner-header {
+  height: 64px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+}
+
+.mobile-inner-header h2 {
+  flex: 1;
+
+  margin: 0;
+
+  color: #111;
+
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.mobile-back-button {
+  width: 40px;
+  height: 40px;
+
+  margin-right: 10px;
+  padding: 0;
+
+  border: 0;
+  background: transparent;
+
+  color: #111;
+
+  font-size: 27px;
+  font-weight: 300;
+
+  cursor: pointer;
+}
+
+
+/* ========================================
+   MOBILE PRODUCT CARDS
+======================================== */
+
+.mobile-product-grid {
+  margin-top: 25px;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.mobile-product-card {
+  padding: 14px;
+
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+
+  background: #fafafa;
+
+  text-align: center;
+}
+
+.mobile-product-card img {
+  display: block;
+
+  width: 100%;
+  height: 130px;
+
+  margin-bottom: 12px;
+
+  object-fit: contain;
+}
+
+.mobile-product-card h3 {
+  margin: 0 0 8px;
+
+  color: #111;
+
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.mobile-product-card a {
+  color: #20a9d8;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  text-decoration: none;
+}
+
+
+/* ========================================
+   MOBILE INNER LINKS
+======================================== */
+
+.mobile-inner-links {
+  margin-top: 25px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-inner-links a {
+  padding: 17px 0;
+
+  border-bottom: 1px solid #e5e5e5;
+
+  color: #111;
+
+  font-size: 16px;
+  font-weight: 500;
+
+  text-decoration: none;
+}
+
+.mobile-inner-links a::after {
+  content: "›";
+
+  float: right;
+
+  color: #888;
+
+  font-size: 22px;
+}
+
+
+/* ========================================
+   MOBILE ACTIONS
+======================================== */
+
+.mobile-menu-actions {
+  flex-shrink: 0;
+
+  padding: 18px 0 5px;
+
+  display: flex;
+  gap: 10px;
+}
+
+.mobile-menu-actions button {
+  width: 38px;
+  height: 38px;
+
+  border: 1px solid #111;
+  border-radius: 50%;
+
+  background: transparent;
+  color: #111;
+
+  font-size: 15px;
+
+  cursor: pointer;
+}
+
+/* ========================================
+   SIMPLE DROPDOWN MENUS
+======================================== */
+
+.dropdown-menu-simple {
+  min-height: auto;
+  padding: 40px 7%;
+  justify-content: center;
+}
+
+.dropdown-simple-links {
+  display: flex;
+  align-items: center;
+  gap: 45px;
+}
+
+.dropdown-simple-links a {
+  color: #111;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+
+  transition: color 0.2s ease;
+}
+
+.dropdown-simple-links a:hover {
+  color: #20a9d8;
+}
+
+
+/* Responsive simple dropdown */
+
+@media (max-width: 1000px) {
+  .dropdown-simple-links {
+    gap: 25px;
+  }
+
+  .dropdown-simple-links a {
+    font-size: 14px;
+  }
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1000px) {
+  .navbar {
+    padding: 0 25px;
+  }
+
+  .navbar-links {
+    gap: 20px;
+  }
+
+  .nav-item {
+    font-size: 14px;
+  }
+
+  .navbar-logo img {
+    width: 120px;
+  }
+
+  .dropdown-menu {
+    padding: 40px 5%;
+    gap: 40px;
+  }
+
+  .dropdown-products {
+    gap: 40px;
+  }
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+  .navbar {
+    top: 43px;
+    height: 72px;
+    padding: 0 18px;
+  }
+  
+
+  .navbar-logo img {
+    width: 110px;
+  }
+
+  .navbar-links,
+  .navbar-actions {
+    display: none;
+  }
+
+  .mobile-menu-button {
+    display: flex;
+  }
+
+  .mobile-menu-header{
+    background-color: #e2e0e0;
+    border-radius: 12px;
+    padding: 10px;
+  }
+}
+
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 380px) {
+  .navbar {
+    padding: 0 14px;
+  }
+
+  .navbar-logo img {
+    width: 100px;
+  }
+
+  .mobile-menu-page {
+    padding: 16px;
+  }
+
+  .mobile-main-links button,
+  .mobile-main-links a {
+    font-size: 19px;
+  }
+
+  .mobile-product-grid {
+    gap: 10px;
+  }
+
+  .mobile-product-card {
+    padding: 10px;
+  }
+
+  .mobile-product-card img {
+    height: 110px;
+  }
+}
+
