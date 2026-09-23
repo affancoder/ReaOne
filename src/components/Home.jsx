@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import "../CSS/home.css";
 import "../CSS/navbar.css";
@@ -13,6 +13,7 @@ import battery2 from "../assets/images/battery-2.webp";
 function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [mobilePage, setMobilePage] = useState("main");
+  const [scrolled, setScrolled] = useState(false);
 
   const openMenu = () => {
     setMenuOpen(true);
@@ -28,249 +29,164 @@ function Home() {
     setMobilePage("main");
   };
 
+  useEffect(() => {
+  const handleScroll = () => {
+    setScrolled(window.scrollY > 20);
+  };
+
+  window.addEventListener("scroll", handleScroll);
+
+  return () => {
+    window.removeEventListener("scroll", handleScroll);
+  };
+}, []);
+
   return (
     <main className="home">
-
       {/* Announcement Bar */}
       <div className="announcement-bar">
         <p>
           Claim your battery rebate through the Cheaper Home Batteries Program
         </p>
 
-        <button type="button">
-          Learn more
-        </button>
+        <button type="button">Learn more</button>
       </div>
 
-
       {/* Navigation */}
-      <header className="navbar">
-
+      <header className={`navbar ${scrolled ? "navbar-scrolled" : ""}`}>
         {/* Logo */}
         <a href="/" className="navbar-logo">
           <img src={logo} alt="REA One" />
         </a>
 
-
         {/* Desktop Navigation */}
         <nav className="navbar-links">
-
           {/* Solar Panels */}
           <div className="nav-item nav-dropdown">
             <span>Solar Panels</span>
 
             <div className="dropdown-menu">
-
               <div className="dropdown-products">
-
                 <div className="dropdown-product">
-                  <img
-                    src={blacktypex}
-                    alt="Type X solar panel"
-                  />
+                  <img src={blacktypex} alt="Type X solar panel" />
 
                   <h3>Type X</h3>
 
-                  <a href="#learn-more">
-                    Learn More
-                  </a>
+                  <a href="#learn-more">Learn More</a>
                 </div>
 
                 <div className="dropdown-product">
-                  <img
-                    src={microinverter}
-                    alt="Microinverters"
-                  />
+                  <img src={microinverter} alt="Microinverters" />
 
                   <h3>Microinverters</h3>
 
-                  <a href="#learn-more">
-                    Learn More
-                  </a>
+                  <a href="#learn-more">Learn More</a>
                 </div>
-
               </div>
 
               <div className="dropdown-links">
+                <a href="#why-solar">Why Solar</a>
 
-                <a href="#why-solar">
-                  Why Solar
-                </a>
+                <a href="#residential">Residential Solar</a>
 
-                <a href="#residential">
-                  Residential Solar
-                </a>
+                <a href="#commercial">Commercial Solar</a>
 
-                <a href="#commercial">
-                  Commercial Solar
-                </a>
-
-                <a href="#battery">
-                  Add-on Battery
-                </a>
-
+                <a href="#battery">Add-on Battery</a>
               </div>
-
             </div>
           </div>
-
 
           {/* Battery Storage */}
           <div className="nav-item nav-dropdown">
             <span>Battery Storage</span>
 
             <div className="dropdown-menu">
-
               <div className="dropdown-products">
-
                 <div className="dropdown-product">
-                  <img
-                    src={battery1}
-                    alt="POWERBANK X"
-                  />
+                  <img src={battery1} alt="POWERBANK X" />
 
                   <h3>POWERBANK X</h3>
 
-                  <a href="#learn-more">
-                    Learn More
-                  </a>
+                  <a href="#learn-more">Learn More</a>
                 </div>
 
                 <div className="dropdown-product">
-                  <img
-                    src={battery2}
-                    alt="POWERBANK 10"
-                  />
+                  <img src={battery2} alt="POWERBANK 10" />
 
                   <h3>POWERBANK 10</h3>
 
-                  <a href="#learn-more">
-                    Learn More
-                  </a>
+                  <a href="#learn-more">Learn More</a>
                 </div>
 
                 <div className="dropdown-product">
-                  <img
-                    src={battery2}
-                    alt="Other Batteries"
-                  />
+                  <img src={battery2} alt="Other Batteries" />
 
                   <h3>Other Batteries</h3>
 
-                  <a href="#learn-more">
-                    Learn More
-                  </a>
+                  <a href="#learn-more">Learn More</a>
                 </div>
-
               </div>
 
               <div className="dropdown-links">
+                <a href="#why-solar">Why Solar and Battery</a>
 
-                <a href="#why-solar">
-                  Why Solar and Battery
-                </a>
-
-                <a href="#cheaper">
-                  Cheaper Home Batteries Program
-                </a>
-
+                <a href="#cheaper">Cheaper Home Batteries Program</a>
               </div>
-
             </div>
           </div>
-
 
           {/* Ecosystem */}
           <div className="nav-item nav-dropdown">
             <span>Ecosystem</span>
 
             <div className="dropdown-menu dropdown-menu-simple">
-
               <div className="dropdown-simple-links">
+                <a href="#smart-monitoring">Smart Monitoring</a>
 
-                <a href="#smart-monitoring">
-                  Smart Monitoring
-                </a>
+                <a href="#ev-charging">EV Charging</a>
 
-                <a href="#ev-charging">
-                  EV Charging
-                </a>
-
-                <a href="#hot-water">
-                  Hot Water
-                </a>
-
+                <a href="#hot-water">Hot Water</a>
               </div>
-
             </div>
           </div>
-
 
           {/* Discover */}
           <div className="nav-item nav-dropdown">
             <span>Discover</span>
 
             <div className="dropdown-menu dropdown-menu-simple">
-
               <div className="dropdown-simple-links">
+                <a href="#about">About Us</a>
 
-                <a href="#about">
-                  About Us
-                </a>
+                <a href="#blogs">Blogs</a>
 
-                <a href="#blogs">
-                  Blogs
-                </a>
+                <a href="#referral">Referral Program</a>
 
-                <a href="#referral">
-                  Referral Program
-                </a>
+                <a href="#customer-stories">Customer Stories</a>
 
-                <a href="#customer-stories">
-                  Customer Stories
-                </a>
-
-                <a href="#rea-impacts">
-                  REA Impacts
-                </a>
-
+                <a href="#rea-impacts">REA Impacts</a>
               </div>
-
             </div>
           </div>
-
 
           {/* Support */}
           <div className="nav-item nav-dropdown">
             <span>Support</span>
 
             <div className="dropdown-menu dropdown-menu-simple">
-
               <div className="dropdown-simple-links">
+                <a href="#support">Support</a>
 
-                <a href="#support">
-                  Support
-                </a>
+                <a href="#faqs">FAQs</a>
 
-                <a href="#faqs">
-                  FAQs
-                </a>
-
-                <a href="#service-ticket">
-                  My Service Ticket
-                </a>
-
+                <a href="#service-ticket">My Service Ticket</a>
               </div>
-
             </div>
           </div>
-
         </nav>
-
 
         {/* Desktop Actions */}
         <div className="navbar-actions">
-
           <button type="button" aria-label="Help">
             ?
           </button>
@@ -282,9 +198,7 @@ function Home() {
           <button type="button" aria-label="Contact">
             ○
           </button>
-
         </div>
-
 
         {/* Mobile Hamburger */}
         <button
@@ -298,19 +212,15 @@ function Home() {
           <span></span>
         </button>
 
-
         {/* Mobile Menu */}
         <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
-
           {/* Main Mobile Menu */}
           <div
             className={`mobile-menu-page mobile-main-page ${
               mobilePage === "main" ? "active" : ""
             }`}
           >
-
             <div className="mobile-menu-header">
-
               <img src={logo} alt="REA One" />
 
               <button
@@ -321,57 +231,36 @@ function Home() {
               >
                 ×
               </button>
-
             </div>
 
-
             <nav className="mobile-main-links">
-
-              <button
-                type="button"
-                onClick={() => setMobilePage("solar")}
-              >
+              <button type="button" onClick={() => setMobilePage("solar")}>
                 <span>Solar Panels</span>
                 <span>›</span>
               </button>
 
-              <button
-                type="button"
-                onClick={() => setMobilePage("battery")}
-              >
+              <button type="button" onClick={() => setMobilePage("battery")}>
                 <span>Battery Storage</span>
                 <span>›</span>
               </button>
 
-              <button
-                type="button"
-                onClick={() => setMobilePage("ecosystem")}
-              >
+              <button type="button" onClick={() => setMobilePage("ecosystem")}>
                 <span>Ecosystem</span>
                 <span>›</span>
               </button>
 
-              <button
-                type="button"
-                onClick={() => setMobilePage("discover")}
-              >
+              <button type="button" onClick={() => setMobilePage("discover")}>
                 <span>Discover</span>
                 <span>›</span>
               </button>
 
-              <button
-                type="button"
-                onClick={() => setMobilePage("support")}
-              >
+              <button type="button" onClick={() => setMobilePage("support")}>
                 <span>Support</span>
                 <span>›</span>
               </button>
-
             </nav>
 
-
             <div className="mobile-menu-actions">
-
               <button type="button" aria-label="Help">
                 ?
               </button>
@@ -383,11 +272,8 @@ function Home() {
               <button type="button" aria-label="Contact">
                 ○
               </button>
-
             </div>
-
           </div>
-
 
           {/* Solar Panels Inner Page */}
           <div
@@ -395,9 +281,7 @@ function Home() {
               mobilePage === "solar" ? "active" : ""
             }`}
           >
-
             <div className="mobile-inner-header">
-
               <button
                 type="button"
                 className="mobile-back-button"
@@ -417,17 +301,11 @@ function Home() {
               >
                 ×
               </button>
-
             </div>
 
-
             <div className="mobile-product-grid">
-
               <div className="mobile-product-card">
-                <img
-                  src={blacktypex}
-                  alt="Type X solar panel"
-                />
+                <img src={blacktypex} alt="Type X solar panel" />
 
                 <h3>Type X</h3>
 
@@ -437,10 +315,7 @@ function Home() {
               </div>
 
               <div className="mobile-product-card">
-                <img
-                  src={microinverter}
-                  alt="Microinverters"
-                />
+                <img src={microinverter} alt="Microinverters" />
 
                 <h3>Microinverters</h3>
 
@@ -448,12 +323,9 @@ function Home() {
                   Learn More
                 </a>
               </div>
-
             </div>
 
-
             <div className="mobile-inner-links">
-
               <a href="#why-solar" onClick={closeMenu}>
                 Why Solar
               </a>
@@ -469,11 +341,8 @@ function Home() {
               <a href="#battery" onClick={closeMenu}>
                 Add-on Battery
               </a>
-
             </div>
-
           </div>
-
 
           {/* Battery Storage Inner Page */}
           <div
@@ -481,9 +350,7 @@ function Home() {
               mobilePage === "battery" ? "active" : ""
             }`}
           >
-
             <div className="mobile-inner-header">
-
               <button
                 type="button"
                 className="mobile-back-button"
@@ -503,17 +370,11 @@ function Home() {
               >
                 ×
               </button>
-
             </div>
 
-
             <div className="mobile-product-grid">
-
               <div className="mobile-product-card">
-                <img
-                  src={battery1}
-                  alt="POWERBANK X"
-                />
+                <img src={battery1} alt="POWERBANK X" />
 
                 <h3>POWERBANK X</h3>
 
@@ -523,10 +384,7 @@ function Home() {
               </div>
 
               <div className="mobile-product-card">
-                <img
-                  src={battery2}
-                  alt="POWERBANK 10"
-                />
+                <img src={battery2} alt="POWERBANK 10" />
 
                 <h3>POWERBANK 10</h3>
 
@@ -536,10 +394,7 @@ function Home() {
               </div>
 
               <div className="mobile-product-card">
-                <img
-                  src={battery2}
-                  alt="Other Batteries"
-                />
+                <img src={battery2} alt="Other Batteries" />
 
                 <h3>Other Batteries</h3>
 
@@ -547,12 +402,9 @@ function Home() {
                   Learn More
                 </a>
               </div>
-
             </div>
 
-
             <div className="mobile-inner-links">
-
               <a href="#why-solar" onClick={closeMenu}>
                 Why Solar and Battery
               </a>
@@ -560,11 +412,8 @@ function Home() {
               <a href="#cheaper" onClick={closeMenu}>
                 Cheaper Home Batteries Program
               </a>
-
             </div>
-
           </div>
-
 
           {/* Ecosystem Inner Page */}
           <div
@@ -572,9 +421,7 @@ function Home() {
               mobilePage === "ecosystem" ? "active" : ""
             }`}
           >
-
             <div className="mobile-inner-header">
-
               <button
                 type="button"
                 className="mobile-back-button"
@@ -594,12 +441,9 @@ function Home() {
               >
                 ×
               </button>
-
             </div>
 
-
             <div className="mobile-inner-links">
-
               <a href="#smart-monitoring" onClick={closeMenu}>
                 Smart Monitoring
               </a>
@@ -611,11 +455,8 @@ function Home() {
               <a href="#hot-water" onClick={closeMenu}>
                 Hot Water
               </a>
-
             </div>
-
           </div>
-
 
           {/* Discover Inner Page */}
           <div
@@ -623,9 +464,7 @@ function Home() {
               mobilePage === "discover" ? "active" : ""
             }`}
           >
-
             <div className="mobile-inner-header">
-
               <button
                 type="button"
                 className="mobile-back-button"
@@ -645,12 +484,9 @@ function Home() {
               >
                 ×
               </button>
-
             </div>
 
-
             <div className="mobile-inner-links">
-
               <a href="#about" onClick={closeMenu}>
                 About Us
               </a>
@@ -670,11 +506,8 @@ function Home() {
               <a href="#rea-impacts" onClick={closeMenu}>
                 REA Impacts
               </a>
-
             </div>
-
           </div>
-
 
           {/* Support Inner Page */}
           <div
@@ -682,9 +515,7 @@ function Home() {
               mobilePage === "support" ? "active" : ""
             }`}
           >
-
             <div className="mobile-inner-header">
-
               <button
                 type="button"
                 className="mobile-back-button"
@@ -704,12 +535,9 @@ function Home() {
               >
                 ×
               </button>
-
             </div>
 
-
             <div className="mobile-inner-links">
-
               <a href="#support" onClick={closeMenu}>
                 Support
               </a>
@@ -721,56 +549,54 @@ function Home() {
               <a href="#service-ticket" onClick={closeMenu}>
                 My Service Ticket
               </a>
-
             </div>
-
           </div>
-
         </div>
-
       </header>
 
-
       {/* Hero */}
-      <section
-        className="hero"
-        style={{ backgroundImage: `url(${heroBg})` }}
-      >
-
+      <section className="hero" style={{ backgroundImage: `url(${heroBg})` }}>
         <div className="hero-overlay"></div>
 
         <div className="hero-content">
+          <p className="hero-label">REA ONE</p>
 
-          <p className="hero-label">
-            REA ONE
-          </p>
-
-          <h1>
-            One System. True Energy Independence.
-          </h1>
+          <h1>One System. True Energy Independence.</h1>
 
           <div className="hero-actions">
-
-            <a
-              href="#quote"
-              className="hero-button"
-            >
+            <a href="#quote" className="hero-button">
               Get Quote
             </a>
 
-            <a
-              href="#how-it-works"
-              className="hero-button"
-            >
+            <a href="#how-it-works" className="hero-button">
               See How it Works
             </a>
-
           </div>
-
         </div>
-
       </section>
 
+      {/* Company Statistics */}
+      <section className="stats-section">
+        <div className="stat-item">
+          <strong>12,488</strong>
+          <span>INSTALLS IN AUSTRALIA</span>
+        </div>
+
+        <div className="stat-item">
+          <strong>38</strong>
+          <span>IN-HOUSE INSTALLERS</span>
+        </div>
+
+        <div className="stat-item">
+          <strong>34</strong>
+          <span>YEARS EXPERIENCE</span>
+        </div>
+
+        <div className="stat-item">
+          <strong>25</strong>
+          <span>YEARS WARRANTY</span>
+        </div>
+      </section>
     </main>
   );
 }
