@@ -9,6 +9,7 @@ import blacktypex from "../assets/images/black-typeX.webp";
 import microinverter from "../assets/images/microinverter.webp";
 import battery1 from "../assets/images/battery-powerbankX.webp";
 import battery2 from "../assets/images/battery-2.webp";
+import electric from "../assets/images/electric.mp4";
 
 function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -617,6 +618,55 @@ function Home() {
             deliver. Lower your bills. Eliminate outages. Scale as your life
             grows. This is energy independence, by design.
           </p>
+        </div>
+      </section>
+
+      {/* Energy System Section */}
+      <section className="system-section">
+        <div className="system-top-gradient"></div>
+
+        <div className="system-content">
+          <div className="system-video">
+            <video src={electric} autoPlay muted loop playsInline />
+          </div>
+
+          <div className="system-features">
+            <article className="system-feature">
+              <span className="feature-line"></span>
+
+              <h3>ONE Bill - Dramatically Lower</h3>
+
+              <p>
+                Stop watching electricity bills climb. Generate and use your own
+                solar energy by taking control of your bills and creating a
+                smarter, more efficient energy system.
+              </p>
+            </article>
+
+            <article className="system-feature">
+              <span className="feature-line"></span>
+
+              <h3>ONE Decision - Lifetime Earnings</h3>
+
+              <p>
+                Don't waste the sun on your roof. Empower your home to capture,
+                store and use energy when you need it most, helping you make the
+                most of every unit your system produces.
+              </p>
+            </article>
+
+            <article className="system-feature">
+              <span className="feature-line"></span>
+
+              <h3>ONE System - Always Powered</h3>
+
+              <p>
+                It goes ahead of power-price spikes during the day and helps
+                keep your home running when the grid can't deliver. More energy
+                independence, less uncertainty.
+              </p>
+            </article>
+          </div>
         </div>
       </section>
     </main>
