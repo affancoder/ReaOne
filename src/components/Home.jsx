@@ -11,7 +11,10 @@ import battery1 from "../assets/images/battery-powerbankX.webp";
 import battery2 from "../assets/images/battery-2.webp";
 import electric from "../assets/images/electric.mp4";
 import call from "../assets/images/call.png";
-import callwhite from "../assets/images/call-white.png";
+import {
+  Phone,
+  Squircle,
+} from "lucide-react";
 
 
 function Home() {
@@ -192,18 +195,18 @@ function Home() {
 
         {/* Desktop Actions */}
         <div className="navbar-actions">
-          <button type="button" aria-label="Help">
-            ?
-          </button>
+  <button type="button" aria-label="Help">
+    ?
+  </button>
 
-          <button type="button" aria-label="Phone" className="phone">
-            <img src={callwhite} width={18} />
-          </button>
+  <button type="button" aria-label="Phone">
+    <Phone size={17} strokeWidth={1.7} />
+  </button>
 
-          <button type="button" aria-label="Contact">
-            ○
-          </button>
-        </div>
+  <button type="button" aria-label="Contact">
+    <Squircle size={17} strokeWidth={1.7} />
+  </button>
+</div>
 
         {/* Mobile Hamburger */}
         <button
