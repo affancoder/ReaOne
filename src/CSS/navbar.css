@@ -105,7 +105,7 @@
   align-items: center;
   justify-content: center;
 
-  border: 1px solid rgba(255, 255, 255, 0.8);
+  border: 2px solid rgba(255, 255, 255, 0.8);
   border-radius: 50%;
 
   background: transparent;
@@ -139,6 +139,7 @@
 .navbar:has(.nav-dropdown:hover) .navbar-actions button {
   color: #111;
   border-color: rgba(0, 0, 0, 0.7);
+  border: 1px solid #333;
 }
 
 
