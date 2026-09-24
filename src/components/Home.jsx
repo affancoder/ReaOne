@@ -672,9 +672,7 @@ function Home() {
         </div>
       </section>
 
-      {/* =======
-    CUSTOMER STORIES F1
-=========== */}
+      {/* === CUSTOMER STORIES F1 ==== */}
 
       <section className="stories-section">
         <div className="stories-header">
@@ -754,6 +752,8 @@ function Home() {
           Read Customer Stories
         </a>
       </section>
+
+      
     </main>
   );
 }
