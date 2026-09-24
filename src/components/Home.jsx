@@ -4,9 +4,16 @@ import "../CSS/home.css";
 import "../CSS/navbar.css";
 import "../CSS/footer.css";
 import Footer from "./Footer";
+
 import logo from "../assets/images/logo.png";
 import WhiteBgLogo from "../assets/images/whitebg-logo.png";
+
 import heroBg from "../assets/images/hero-bg.webp";
+import heroBg2 from "../assets/images/hero-bg2.webp";
+
+import secondaryBg1 from "../assets/images/seconday-bg.jpg";
+import secondaryBg2 from "../assets/images/seconday-bg2.webp";
+
 import f1 from "../assets/images/f1.webp";
 import blacktypex from "../assets/images/black-typeX.webp";
 import typeX from "../assets/images/typeX.webp";
@@ -17,18 +24,40 @@ import battery1 from "../assets/images/battery-powerbankX.webp";
 import battery2 from "../assets/images/battery-2.webp";
 import electric from "../assets/images/electric.mp4";
 import call from "../assets/images/call.png";
+
 import partner1 from "../assets/images/partner1.webp";
 import partner2 from "../assets/images/partner2.webp";
 import partner3 from "../assets/images/partner3.webp";
 import partner4 from "../assets/images/partner4.webp";
 import partner5 from "../assets/images/partner5.webp";
 import partner6 from "../assets/images/partner6.webp";
+
 import { Phone, Squircle } from "lucide-react";
 
 function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [mobilePage, setMobilePage] = useState("main");
   const [scrolled, setScrolled] = useState(false);
+
+  // =========================
+  // HERO SLIDER
+  // =========================
+
+  const heroImages = [heroBg, heroBg2];
+
+  const [heroSlide, setHeroSlide] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setHeroSlide((prev) => (prev + 1) % heroImages.length);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  // =========================
+  // MOBILE MENU
+  // =========================
 
   const openMenu = () => {
     setMenuOpen(true);
@@ -44,6 +73,10 @@ function Home() {
     setMobilePage("main");
   };
 
+  // =========================
+  // NAVBAR SCROLL
+  // =========================
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -55,6 +88,10 @@ function Home() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  // =========================
+  // PRODUCT SLIDER
+  // =========================
 
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -68,7 +105,10 @@ function Home() {
 
   return (
     <main className="home">
-      {/* Announcement Bar */}
+      {/* =========================
+          ANNOUNCEMENT BAR
+      ========================= */}
+
       <div className="announcement-bar">
         <p>
           Claim your battery rebate through the Cheaper Home Batteries Program.
@@ -80,9 +120,13 @@ function Home() {
         </button>
       </div>
 
-      {/* Navigation */}
+      {/* =========================
+          NAVIGATION
+      ========================= */}
+
       <header className={`navbar ${scrolled ? "navbar-scrolled" : ""}`}>
         {/* Logo */}
+
         <a href="/" className="navbar-logo">
           <img src={logo} alt="REA One" className="navbar-logo-default" />
 
@@ -90,8 +134,10 @@ function Home() {
         </a>
 
         {/* Desktop Navigation */}
+
         <nav className="navbar-links">
           {/* Solar Panels */}
+
           <div className="nav-item nav-dropdown">
             <span>Solar Panels</span>
 
@@ -127,6 +173,7 @@ function Home() {
           </div>
 
           {/* Battery Storage */}
+
           <div className="nav-item nav-dropdown">
             <span>Battery Storage</span>
 
@@ -166,6 +213,7 @@ function Home() {
           </div>
 
           {/* Ecosystem */}
+
           <div className="nav-item nav-dropdown">
             <span>Ecosystem</span>
 
@@ -181,6 +229,7 @@ function Home() {
           </div>
 
           {/* Discover */}
+
           <div className="nav-item nav-dropdown">
             <span>Discover</span>
 
@@ -200,6 +249,7 @@ function Home() {
           </div>
 
           {/* Support */}
+
           <div className="nav-item nav-dropdown">
             <span>Support</span>
 
@@ -216,6 +266,7 @@ function Home() {
         </nav>
 
         {/* Desktop Actions */}
+
         <div className="navbar-actions">
           <button type="button" aria-label="Help">
             ?
@@ -231,6 +282,7 @@ function Home() {
         </div>
 
         {/* Mobile Hamburger */}
+
         <button
           type="button"
           className="mobile-menu-button"
@@ -242,9 +294,13 @@ function Home() {
           <span></span>
         </button>
 
-        {/* Mobile Menu */}
+        {/* =========================
+            MOBILE MENU
+        ========================= */}
+
         <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
           {/* Main Mobile Menu */}
+
           <div
             className={`mobile-menu-page mobile-main-page ${
               mobilePage === "main" ? "active" : ""
@@ -266,8 +322,10 @@ function Home() {
             <nav className="mobile-main-links">
               <button type="button" onClick={() => setMobilePage("solar")}>
                 <span>
-                  <img src={call} width={16} /> &nbsp;1300 360 047
+                  <img src={call} width={16} alt="" />
+                  &nbsp;1300 360 047
                 </span>
+
                 <span></span>
               </button>
 
@@ -299,6 +357,7 @@ function Home() {
           </div>
 
           {/* Solar Panels Inner Page */}
+
           <div
             className={`mobile-menu-page mobile-inner-page ${
               mobilePage === "solar" ? "active" : ""
@@ -368,6 +427,7 @@ function Home() {
           </div>
 
           {/* Battery Storage Inner Page */}
+
           <div
             className={`mobile-menu-page mobile-inner-page ${
               mobilePage === "battery" ? "active" : ""
@@ -439,6 +499,7 @@ function Home() {
           </div>
 
           {/* Ecosystem Inner Page */}
+
           <div
             className={`mobile-menu-page mobile-inner-page ${
               mobilePage === "ecosystem" ? "active" : ""
@@ -482,6 +543,7 @@ function Home() {
           </div>
 
           {/* Discover Inner Page */}
+
           <div
             className={`mobile-menu-page mobile-inner-page ${
               mobilePage === "discover" ? "active" : ""
@@ -533,6 +595,7 @@ function Home() {
           </div>
 
           {/* Support Inner Page */}
+
           <div
             className={`mobile-menu-page mobile-inner-page ${
               mobilePage === "support" ? "active" : ""
@@ -577,8 +640,16 @@ function Home() {
         </div>
       </header>
 
-      {/* Hero */}
-      <section className="hero" style={{ backgroundImage: `url(${heroBg})` }}>
+      {/* =========================
+          HERO SLIDER
+      ========================= */}
+
+      <section
+        className="hero"
+        style={{
+          backgroundImage: `url(${heroImages[heroSlide]})`,
+        }}
+      >
         <div className="hero-overlay"></div>
 
         <div className="hero-content">
@@ -598,7 +669,10 @@ function Home() {
         </div>
       </section>
 
-      {/* Company Statistics */}
+      {/* =========================
+          COMPANY STATISTICS
+      ========================= */}
+
       <section className="stats-section">
         <div className="stat-item">
           <strong>12,488</strong>
@@ -622,28 +696,27 @@ function Home() {
       </section>
 
       {/* Energy Solution */}
-      <section className="energy-section">
-        <div className="energy-overlay"></div>
 
-        <div className="energy-content">
-          <h2>Everything You Need. In ONE Solution</h2>
+      <section
+        className="hero"
+        style={{
+          backgroundImage: `url(${[secondaryBg1, secondaryBg2][heroSlide]})`,
+        }}
+      >
+        <div className="hero-overlay"></div>
 
-          <h3>
-            Transform your energy future with a complete solar and battery
-            solution.
-          </h3>
+        <div className="hero-content">
 
-          <p>
-            REA One brings solar and battery together as a single, intelligent
-            ecosystem. One system that learns your patterns. One solution that
-            stores what you need. One source of power when the grid can't
-            deliver. Lower your bills. Eliminate outages. Scale as your life
-            grows. This is energy independence, by design.
-          </p>
+          <h1>Everything You Need. In ONE Solution</h1>
+          <p className="energy-content">Transform your energy future with a complete solar and battery solution.</p>
+          <p className="energy-content2">REA One brings solar and battery together as a single, intelligent ecosystem. One system that learns your patterns. One solution that stores what you need. One source of power when the grid can’t deliver. Lower your bills. Eliminate outages. Scale as your life grows. This is energy independence, by design.</p>
         </div>
       </section>
 
-      {/* Energy System Section */}
+      {/* =========================
+          ENERGY SYSTEM
+      ========================= */}
+
       <section className="system-section">
         <div className="system-top-gradient"></div>
 
@@ -692,7 +765,9 @@ function Home() {
         </div>
       </section>
 
-      {/* === CUSTOMER STORIES F1 ==== */}
+      {/* =========================
+          CUSTOMER STORIES
+      ========================= */}
 
       <section className="stories-section">
         <div className="stories-header">
@@ -700,8 +775,6 @@ function Home() {
 
           <p>See what REA customers had to say:</p>
         </div>
-
-        {/* Testimonial Card */}
 
         <div className="story-card">
           <button
@@ -738,15 +811,11 @@ function Home() {
           </button>
         </div>
 
-        {/* Slider Dots */}
-
         <div className="story-dots">
           <span className="active"></span>
           <span></span>
           <span></span>
         </div>
-
-        {/* Statistics */}
 
         <div className="story-stats">
           <div className="story-stat">
@@ -766,18 +835,19 @@ function Home() {
           </div>
         </div>
 
-        {/* CTA */}
-
         <a href="#customer-stories" className="stories-button">
           Read Customer Stories
         </a>
       </section>
 
-      {/* PRODUCT GRID */}
+      {/* =========================
+          PRODUCT GRID
+      ========================= */}
 
       <section className="product-grid-section">
         <div className="product-grid">
           {/* Card 1 */}
+
           <article className="product-card card1">
             <h3>Type X</h3>
 
@@ -785,6 +855,7 @@ function Home() {
 
             <div className="product-buttons">
               <a href="#quote">Get Quote</a>
+
               <a href="#learn-more">Learn More</a>
             </div>
 
@@ -794,6 +865,7 @@ function Home() {
           </article>
 
           {/* Card 2 */}
+
           <article className="product-card card2">
             <h3>POWERBANK X</h3>
 
@@ -801,6 +873,7 @@ function Home() {
 
             <div className="product-buttons">
               <a href="#quote">Get Quote</a>
+
               <a href="#learn-more">Learn More</a>
             </div>
 
@@ -810,6 +883,7 @@ function Home() {
           </article>
 
           {/* Card 3 */}
+
           <article className="product-card product-card-dark">
             <h3>POWERBANK</h3>
 
@@ -817,6 +891,7 @@ function Home() {
 
             <div className="product-buttons">
               <a href="#quote">Get Quote</a>
+
               <a href="#learn-more">Learn More</a>
             </div>
 
@@ -826,6 +901,7 @@ function Home() {
           </article>
 
           {/* Card 4 */}
+
           <article className="product-card card4">
             <h3>Other Batteries</h3>
 
@@ -833,6 +909,7 @@ function Home() {
 
             <div className="product-buttons">
               <a href="#quote">Get Quote</a>
+
               <a href="#learn-more">Learn More</a>
             </div>
 
@@ -843,7 +920,9 @@ function Home() {
         </div>
       </section>
 
-      {/* ===== PRODUCT SLIDER ===== */}
+      {/* =========================
+          PRODUCT SLIDER
+      ========================= */}
 
       <section className="product-slider-section">
         <div className="product-slider">
@@ -863,7 +942,8 @@ function Home() {
                 transform: `translateX(-${currentSlide * 100}%)`,
               }}
             >
-              {/* SLIDE 1 */}
+              {/* Slide 1 */}
+
               <div className="product-slide card1">
                 <div className="product-slide-content">
                   <h2>Smart Monitoring</h2>
@@ -872,14 +952,16 @@ function Home() {
 
                   <div className="product-buttons">
                     <a href="#quote">Get Quote</a>
+
                     <a href="#learn-more">Learn More</a>
                   </div>
                 </div>
 
-                <img src={monitoring} alt="Type X" />
+                <img src={monitoring} alt="Smart Monitoring" />
               </div>
 
-              {/* SLIDE 2 */}
+              {/* Slide 2 */}
+
               <div className="product-slide card3">
                 <div className="product-slide-content">
                   <h2>EV Charging</h2>
@@ -888,6 +970,7 @@ function Home() {
 
                   <div className="product-buttons">
                     <a href="#quote">Get Quote</a>
+
                     <a href="#learn-more">Learn More</a>
                   </div>
                 </div>
@@ -895,7 +978,8 @@ function Home() {
                 <img src={PowerBankX} alt="POWERBANK" />
               </div>
 
-              {/* SLIDE 3 */}
+              {/* Slide 3 */}
+
               <div className="product-slide card4">
                 <div className="product-slide-content">
                   <h2>Hot Water</h2>
@@ -904,6 +988,7 @@ function Home() {
 
                   <div className="product-buttons">
                     <a href="#quote">Get Quote</a>
+
                     <a href="#learn-more">Learn More</a>
                   </div>
                 </div>
@@ -938,25 +1023,34 @@ function Home() {
         </div>
       </section>
 
-      {/* QUICK LINKS SECTION */}
+      {/* =========================
+          QUICK LINKS
+      ========================= */}
+
       <section className="quick-links-section">
         <a href="#assessment" className="quick-link">
           <span>Get a free energy assessment</span>
+
           <span className="quick-arrow">›</span>
         </a>
 
         <a href="#plans" className="quick-link">
           <span>Compare payment plans</span>
+
           <span className="quick-arrow">›</span>
         </a>
 
         <a href="#calculator" className="quick-link">
           <span>Online energy calculator</span>
+
           <span className="quick-arrow">›</span>
         </a>
       </section>
 
-      {/* Porsche Section */}
+      {/* =========================
+          PORSCHE
+      ========================= */}
+
       <section className="porsche-section">
         <div className="porsche-overlay"></div>
 
@@ -979,8 +1073,14 @@ function Home() {
         </div>
       </section>
 
-      {/* Partner */}
-      <div className="partner-heading"><h1>Trusted by the best</h1></div>
+      {/* =========================
+          TRUSTED PARTNERS
+      ========================= */}
+
+      <div className="partner-heading">
+        <h1>Trusted by the best</h1>
+      </div>
+
       <div className="partners-slider">
         <div className="partners-window">
           <div className="partners-track">
@@ -1036,8 +1136,12 @@ function Home() {
           </div>
         </div>
       </div>
-      {/* footer */}
-      <Footer/>
+
+      {/* =========================
+          FOOTER
+      ========================= */}
+
+      <Footer />
     </main>
   );
 }

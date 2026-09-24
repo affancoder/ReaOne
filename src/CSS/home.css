@@ -124,6 +124,10 @@
   color: #fff;
 }
 
+.hero {
+  transition: background-image 1s ease-in-out;
+}
+
 /* Tablet */
 
 @media (max-width: 768px) {
@@ -377,6 +381,7 @@
 /* ========================================
    ENERGY SOLUTION
 ======================================== */
+
 .energy-section {
   position: relative;
 
@@ -389,7 +394,7 @@
 
   padding: 70px 20px 60px;
 
-  background-image: url("../assets/images/hero2.avif");
+  /* background-image: url("../assets/images/hero2.avif"); */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -401,7 +406,7 @@
   position: absolute;
   inset: 0;
 
-  /* background: rgba(133, 133, 133, 0.38); */
+  background: rgba(53, 52, 52, 0.63);
 }
 
 .energy-content {
@@ -413,8 +418,7 @@
 
   text-align: center;
   color: #000;
-
-  text-shadow: 0 2px 8px rgba(109, 109, 109, 0.45);
+  text-shadow: 0 2px 8px rgba(109, 109, 109, 0.63);
 }
 
 .energy-content h2 {
@@ -425,6 +429,7 @@
   line-height: 1.15;
   letter-spacing: -0.5px;
   font-size: 2rem;
+  color: #fff;
 }
 
 .energy-content h3 {
@@ -437,9 +442,10 @@
   line-height: 1.5;
   letter-spacing: 0.2px;
   font-size: 1rem;
+  color: #fff;
 }
 
-.energy-content p {
+.energy-content{
   max-width: 820px;
 
   margin: 20px auto 0;
@@ -448,8 +454,13 @@
   font-weight: 500;
   line-height: 1.65;
   letter-spacing: 0.1px;
-  color: #000;
+  color: #fff;
   text-shadow: 0 2px 8px rgba(189, 189, 189, 0.45);
+}
+
+.energy-content2{
+  margin: 20px auto 0;
+  padding: 0 10%;
 }
 
 /* ========================================
