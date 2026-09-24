@@ -52,11 +52,11 @@ function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev === 3 ? 0 : prev + 1));
+    setCurrentSlide((prev) => (prev === 2 ? 0 : prev + 1));
   };
 
   const previousSlide = () => {
-    setCurrentSlide((prev) => (prev === 0 ? 3 : prev - 1));
+    setCurrentSlide((prev) => (prev === 0 ? 2 : prev - 1));
   };
 
   return (
@@ -873,11 +873,11 @@ function Home() {
               </div>
 
               {/* SLIDE 2 */}
-              <div className="product-slide card2">
+              <div className="product-slide card3">
                 <div className="product-slide-content">
-                  <h2>POWERBANK X</h2>
+                  <h2>EV Charging</h2>
 
-                  <p>The next generation of home energy storage.</p>
+                  <p>Charge your EV faster with smart home charging.</p>
 
                   <div className="product-slide-buttons">
                     <a href="#details">Get Quote</a>
@@ -885,31 +885,15 @@ function Home() {
                   </div>
                 </div>
 
-                <img src={battery1} alt="POWERBANK X" />
+                <img src={PowerBankX} alt="POWERBANK" />
               </div>
 
               {/* SLIDE 3 */}
-              <div className="product-slide card3">
-                <div className="product-slide-content">
-                  <h2>POWERBANK</h2>
-
-                  <p>Power your home with smarter energy independence.</p>
-
-                  <div className="product-slide-buttons">
-                    <a href="#details">Get Quote</a>
-                    <a href="#learn-more">Learn More</a>
-                  </div>
-                </div>
-
-                <img src={battery2} alt="POWERBANK" />
-              </div>
-
-              {/* SLIDE 4 */}
               <div className="product-slide card4">
                 <div className="product-slide-content">
-                  <h2>Other Batteries</h2>
+                  <h2>Hot Water</h2>
 
-                  <p>Compatible with the best battery solutions.</p>
+                  <p>Efficient hot water powered by clean energy.</p>
 
                   <div className="product-slide-buttons">
                     <a href="#details">Get Quote</a>
@@ -917,7 +901,7 @@ function Home() {
                   </div>
                 </div>
 
-                <img src={battery2} alt="Other Batteries" />
+                <img src={PowerBankX} alt="Other Batteries" />
               </div>
             </div>
           </div>
@@ -935,7 +919,7 @@ function Home() {
         {/* Dots */}
 
         <div className="product-slider-dots">
-          {[0, 1, 2, 3].map((index) => (
+          {[0, 1, 2].map((index) => (
             <button
               key={index}
               type="button"
