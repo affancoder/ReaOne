@@ -4,6 +4,7 @@ import "../CSS/home.css";
 import "../CSS/navbar.css";
 
 import logo from "../assets/images/logo.png";
+import WhiteBgLogo from "../assets/images/whitebg-logo.png";
 import heroBg from "../assets/images/hero-bg.webp";
 import blacktypex from "../assets/images/black-typeX.webp";
 import microinverter from "../assets/images/microinverter.webp";
@@ -11,11 +12,7 @@ import battery1 from "../assets/images/battery-powerbankX.webp";
 import battery2 from "../assets/images/battery-2.webp";
 import electric from "../assets/images/electric.mp4";
 import call from "../assets/images/call.png";
-import {
-  Phone,
-  Squircle,
-} from "lucide-react";
-
+import { Phone, Squircle } from "lucide-react";
 
 function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -50,21 +47,25 @@ function Home() {
 
   return (
     <main className="home">
-
       {/* Announcement Bar */}
       <div className="announcement-bar">
         <p>
           Claim your battery rebate through the Cheaper Home Batteries Program.
-        <span className="responsive-btn">Learn more</span></p>
+          <span className="responsive-btn">Learn more</span>
+        </p>
 
-          <button type="button" className="desktop-btn">Learn more</button>
+        <button type="button" className="desktop-btn">
+          Learn more
+        </button>
       </div>
 
       {/* Navigation */}
       <header className={`navbar ${scrolled ? "navbar-scrolled" : ""}`}>
         {/* Logo */}
         <a href="/" className="navbar-logo">
-          <img src={logo} alt="REA One" />
+          <img src={logo} alt="REA One" className="navbar-logo-default" />
+
+          <img src={WhiteBgLogo} alt="REA One" className="navbar-logo-white" />
         </a>
 
         {/* Desktop Navigation */}
@@ -195,18 +196,18 @@ function Home() {
 
         {/* Desktop Actions */}
         <div className="navbar-actions">
-  <button type="button" aria-label="Help">
-    ?
-  </button>
+          <button type="button" aria-label="Help">
+            ?
+          </button>
 
-  <button type="button" aria-label="Phone">
-    <Phone size={17} strokeWidth={1.7} />
-  </button>
+          <button type="button" aria-label="Phone">
+            <Phone size={17} strokeWidth={1.7} />
+          </button>
 
-  <button type="button" aria-label="Contact">
-    <Squircle size={17} strokeWidth={1.7} />
-  </button>
-</div>
+          <button type="button" aria-label="Contact">
+            <Squircle size={17} strokeWidth={1.7} />
+          </button>
+        </div>
 
         {/* Mobile Hamburger */}
         <button
@@ -242,9 +243,10 @@ function Home() {
             </div>
 
             <nav className="mobile-main-links">
-              
               <button type="button" onClick={() => setMobilePage("solar")}>
-                <span><img src={call} width={16}/> &nbsp;1300 360 047</span>
+                <span>
+                  <img src={call} width={16} /> &nbsp;1300 360 047
+                </span>
                 <span></span>
               </button>
 
@@ -273,8 +275,6 @@ function Home() {
                 <span>›</span>
               </button>
             </nav>
-
-            
           </div>
 
           {/* Solar Panels Inner Page */}
@@ -553,7 +553,6 @@ function Home() {
               </a>
             </div>
           </div>
-          
         </div>
       </header>
 
