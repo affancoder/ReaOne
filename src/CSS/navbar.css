@@ -129,6 +129,21 @@
   color: #111;
 }
 
+/* Navbar background when desktop dropdown is open */
+
+.navbar:has(.nav-dropdown:hover) {
+  background-color: #fff;
+  color: #111;
+}
+
+.navbar:has(.nav-dropdown:hover) .nav-item {
+  color: #111;
+}
+
+.navbar:has(.nav-dropdown:hover) .navbar-actions button {
+  color: #111;
+  border-color: rgba(0, 0, 0, 0.7);
+}
 
 
 /* ========================================
@@ -216,7 +231,7 @@
 }
 
 .dropdown-product a:hover {
-  color: #20a9d8;
+  color: #888;
 }
 
 
