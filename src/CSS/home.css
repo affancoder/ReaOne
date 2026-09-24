@@ -1543,9 +1543,10 @@
 
   width: 100%;
 
-  padding: 70px 5% 80px;
+  padding: 6px 50px;
 
   background: #fff;
+  border-radius: 14px;
 
   overflow: hidden;
 }
@@ -1752,7 +1753,7 @@
 .product-slide-buttons a:hover {
   transform: scaleY(1.05);
   transition: 0.25s ease;
-  
+
 }
 
 

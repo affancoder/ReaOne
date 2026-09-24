@@ -863,8 +863,8 @@ function Home() {
 
                   <p>Track your energy use and savings in real time.</p>
 
-                  <div className="product-slide-buttons">
-                    <a href="#details">Get Quote</a>
+                  <div className="product-buttons">
+                    <a href="#quote">Get Quote</a>
                     <a href="#learn-more">Learn More</a>
                   </div>
                 </div>
@@ -879,8 +879,8 @@ function Home() {
 
                   <p>Charge your EV faster with smart home charging.</p>
 
-                  <div className="product-slide-buttons">
-                    <a href="#details">Get Quote</a>
+                  <div className="product-buttons">
+                    <a href="#quote">Get Quote</a>
                     <a href="#learn-more">Learn More</a>
                   </div>
                 </div>
@@ -895,8 +895,8 @@ function Home() {
 
                   <p>Efficient hot water powered by clean energy.</p>
 
-                  <div className="product-slide-buttons">
-                    <a href="#details">Get Quote</a>
+                  <div className="product-buttons">
+                    <a href="#quote">Get Quote</a>
                     <a href="#learn-more">Learn More</a>
                   </div>
                 </div>
