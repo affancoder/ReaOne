@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import "../CSS/home.css";
 import "../CSS/navbar.css";
-
+import "../CSS/footer.css";
 import logo from "../assets/images/logo.png";
 import WhiteBgLogo from "../assets/images/whitebg-logo.png";
 import heroBg from "../assets/images/hero-bg.webp";
@@ -16,6 +16,12 @@ import battery1 from "../assets/images/battery-powerbankX.webp";
 import battery2 from "../assets/images/battery-2.webp";
 import electric from "../assets/images/electric.mp4";
 import call from "../assets/images/call.png";
+import partner1 from "../assets/images/partner1.webp";
+import partner2 from "../assets/images/partner2.webp";
+import partner3 from "../assets/images/partner3.webp";
+import partner4 from "../assets/images/partner4.webp";
+import partner5 from "../assets/images/partner5.webp";
+import partner6 from "../assets/images/partner6.webp";
 import { Phone, Squircle } from "lucide-react";
 
 function Home() {
@@ -930,6 +936,105 @@ function Home() {
           ))}
         </div>
       </section>
+
+      {/* QUICK LINKS SECTION */}
+      <section className="quick-links-section">
+        <a href="#assessment" className="quick-link">
+          <span>Get a free energy assessment</span>
+          <span className="quick-arrow">›</span>
+        </a>
+
+        <a href="#plans" className="quick-link">
+          <span>Compare payment plans</span>
+          <span className="quick-arrow">›</span>
+        </a>
+
+        <a href="#calculator" className="quick-link">
+          <span>Online energy calculator</span>
+          <span className="quick-arrow">›</span>
+        </a>
+      </section>
+
+      {/* Porsche Section */}
+      <section className="porsche-section">
+        <div className="porsche-overlay"></div>
+
+        <div className="porsche-content">
+          <h2>
+            REA ONE × Porsche: Driving the Next Generation of Energy Innovation
+          </h2>
+
+          <p>
+            We share Porsche's passion for intelligent performance, where
+            innovation meets emotion and design meets purpose.
+            <br />
+            Together, we've built a seamless ecosystem to generate, store, and
+            drive.
+          </p>
+
+          <a href="#porsche" className="porsche-button">
+            Discover REA ONE × Porsche
+          </a>
+        </div>
+      </section>
+
+      {/* Partner */}
+      <div className="partner-heading"><h1>Trusted by the best</h1></div>
+      <div className="partners-slider">
+        <div className="partners-window">
+          <div className="partners-track">
+            <div className="partner-logo">
+              <img src={partner1} alt="Partner 1" />
+            </div>
+
+            <div className="partner-logo">
+              <img src={partner2} alt="Partner 2" />
+            </div>
+
+            <div className="partner-logo">
+              <img src={partner3} alt="Partner 3" />
+            </div>
+
+            <div className="partner-logo">
+              <img src={partner4} alt="Partner 4" />
+            </div>
+
+            <div className="partner-logo">
+              <img src={partner5} alt="Partner 5" />
+            </div>
+
+            <div className="partner-logo">
+              <img src={partner6} alt="Partner 6" />
+            </div>
+
+            {/* Duplicate for continuous loop */}
+
+            <div className="partner-logo">
+              <img src={partner1} alt="Partner 1" />
+            </div>
+
+            <div className="partner-logo">
+              <img src={partner2} alt="Partner 2" />
+            </div>
+
+            <div className="partner-logo">
+              <img src={partner3} alt="Partner 3" />
+            </div>
+
+            <div className="partner-logo">
+              <img src={partner4} alt="Partner 4" />
+            </div>
+
+            <div className="partner-logo">
+              <img src={partner5} alt="Partner 5" />
+            </div>
+
+            <div className="partner-logo">
+              <img src={partner6} alt="Partner 6" />
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
   );
 }

@@ -1994,3 +1994,589 @@
     font-size: 12px;
   }
 }
+
+/* ========================================
+   QUICK LINKS SECTION
+======================================== */
+
+.quick-links-section {
+  width: 100%;
+
+  padding: 55px 9% 60px;
+
+  background: #fff;
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* ========================================
+   LINK
+======================================== */
+
+.quick-link {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 18px 0;
+
+  color: #000;
+  text-decoration: none;
+
+  transition:
+    padding-left 0.3s ease,
+    opacity 0.3s ease;
+}
+
+
+/* ========================================
+   TEXT
+======================================== */
+
+.quick-link span:first-child {
+  font-size: clamp(38px, 4.5vw, 64px);
+
+  font-weight: 400;
+
+  line-height: 1.15;
+
+  letter-spacing: -2px;
+}
+
+
+/* ========================================
+   ARROW
+======================================== */
+
+.quick-arrow {
+  flex-shrink: 0;
+
+  margin-left: 30px;
+
+  font-size: 48px;
+
+  font-weight: 300;
+
+  line-height: 1;
+
+  transition:
+    transform 0.3s ease;
+}
+
+
+/* ========================================
+   HOVER
+======================================== */
+
+.quick-link:hover {
+  padding-left: 8px;
+  color: #888;
+  transition: all 0.25s ease;
+}
+
+.quick-link:hover .quick-arrow {
+  transform: translateX(8px);
+  color: #888;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 768px) {
+  .quick-links-section {
+    padding: 45px 6% 50px;
+  }
+
+  .quick-link {
+    padding: 15px 0;
+  }
+
+  .quick-link span:first-child {
+    font-size: clamp(30px, 6vw, 46px);
+
+    letter-spacing: -1.5px;
+  }
+
+  .quick-arrow {
+    font-size: 38px;
+    margin-left: 20px;
+  }
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 480px) {
+  .quick-links-section {
+    padding: 35px 20px 40px;
+  }
+
+  .quick-link {
+    padding: 14px 0;
+  }
+
+  .quick-link span:first-child {
+    font-size: 27px;
+
+    line-height: 1.2;
+
+    letter-spacing: -0.8px;
+  }
+
+  .quick-arrow {
+    font-size: 30px;
+
+    margin-left: 15px;
+  }
+
+  .quick-link:hover {
+    padding-left: 0;
+  }
+
+  .quick-link:hover .quick-arrow {
+    transform: translateX(5px);
+  }
+}
+
+/* ========================================
+   PORSCHE SECTION
+======================================== */
+
+.porsche-section {
+  position: relative;
+
+  width: 100%;
+  min-height: 470px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 80px 20px;
+
+  background-image: url("../assets/images/porsche.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  overflow: hidden;
+}
+
+
+/* DARK OVERLAY */
+
+.porsche-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.52);
+
+  z-index: 1;
+}
+
+
+/* CONTENT */
+
+.porsche-content {
+  position: relative;
+  z-index: 2;
+
+  width: min(1050px, 100%);
+
+  text-align: center;
+
+  color: #fff;
+}
+
+
+/* TITLE */
+
+.porsche-content h2 {
+  margin: 0;
+
+  font-size: clamp(25px, 3vw, 31px);
+
+  font-weight: 400;
+
+  line-height: 1.3;
+
+  letter-spacing: -0.3px;
+}
+
+
+/* DESCRIPTION */
+
+.porsche-content p {
+  margin: 22px auto 0;
+
+  max-width: 850px;
+
+  color: #fff;
+
+  font-size: 16px;
+
+  font-weight: 500;
+
+  line-height: 1.65;
+}
+
+
+/* BUTTON */
+
+.porsche-button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 34px;
+
+  min-width: 260px;
+
+  padding: 17px 25px;
+
+  border: 1px solid rgba(255, 255, 255, 0.85);
+
+  border-radius: 35px;
+
+  color: #fff;
+
+  background: transparent;
+
+  text-decoration: none;
+
+  font-size: 15px;
+
+  font-weight: 400;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+/* HOVER */
+
+.porsche-button:hover {
+  background: #fff;
+
+  color: #111;
+
+  transform: translateY(-2px);
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 768px) {
+
+  .porsche-section {
+    min-height: 430px;
+
+    padding: 70px 24px;
+
+    background-position: center;
+  }
+
+  .porsche-content h2 {
+    font-size: 25px;
+  }
+
+  .porsche-content p {
+    margin-top: 18px;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+  }
+
+  .porsche-button {
+    margin-top: 28px;
+
+    min-width: 240px;
+
+    padding: 15px 22px;
+
+    font-size: 14px;
+  }
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 480px) {
+
+  .porsche-section {
+    min-height: 430px;
+
+    padding: 60px 18px;
+
+    background-position: center;
+  }
+
+  .porsche-overlay {
+    background: rgba(0, 0, 0, 0.58);
+  }
+
+  .porsche-content h2 {
+    font-size: 23px;
+
+    line-height: 1.3;
+  }
+
+  .porsche-content p {
+    margin-top: 17px;
+
+    font-size: 13px;
+
+    line-height: 1.65;
+  }
+
+  .porsche-button {
+    width: auto;
+
+    min-width: 230px;
+
+    margin-top: 27px;
+
+    padding: 14px 20px;
+
+    font-size: 13px;
+  }
+}
+
+/* == TRUSTED PARTNERS ======== */
+
+.partners-section {
+  width: 100%;
+  padding: 80px 40px;
+  background: #fff;
+  overflow: hidden;
+}
+
+
+/* HEADER */
+
+.partner-heading{
+  text-align: center;
+  margin-top: 40px;
+  font-size: 1.4rem;
+}
+
+.partners-header {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.partners-header h2 {
+  margin: 0;
+  color: #111;
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.partners-header p {
+  margin: 14px auto 0;
+  max-width: 650px;
+  color: #666;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+
+
+/* SLIDER */
+
+.partners-slider {
+  position: relative;
+  padding: 60px ;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 20px;
+}
+
+
+/* WINDOW */
+
+.partners-window {
+  width: 100%;
+  overflow: hidden;
+}
+
+
+/* TRACK */
+
+.partners-track {
+  display: flex;
+  align-items: center;
+
+  gap: 70px;
+
+  width: max-content;
+
+  animation: partnersAutoSlide 20s linear infinite;
+}
+
+
+/* PAUSE WHEN HOVERING */
+
+.partners-track:hover {
+  animation-play-state: paused;
+}
+
+
+/* LOGO */
+
+.partner-logo {
+  flex: 0 0 180px;
+
+  height: 90px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* ALWAYS COLORED */
+
+.partner-logo img {
+  width: auto;
+  height: auto;
+
+  max-width: 150px;
+  max-height: 65px;
+
+  object-fit: contain;
+
+  opacity: 1;
+
+  filter: none;
+
+  transition: transform 0.3s ease;
+}
+
+
+/* SMALL HOVER EFFECT */
+
+.partner-logo:hover img {
+  transform: scale(1.08);
+}
+
+
+/* AUTO SLIDER */
+
+@keyframes partnersAutoSlide {
+
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+
+}
+
+
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 768px) {
+
+  .partners-section {
+    padding: 65px 25px;
+  }
+
+  .partners-header {
+    margin-bottom: 35px;
+  }
+
+  .partners-header h2 {
+    font-size: 30px;
+  }
+
+  .partners-header p {
+    font-size: 13px;
+  }
+
+  .partners-track {
+    gap: 45px;
+
+    animation-duration: 16s;
+  }
+
+  .partner-logo {
+    flex-basis: 150px;
+  }
+
+  .partner-logo img {
+    max-width: 125px;
+    max-height: 55px;
+  }
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 480px) {
+
+  .partners-section {
+    padding: 55px 15px;
+  }
+
+  .partners-header {
+    margin-bottom: 28px;
+  }
+
+  .partners-header h2 {
+    font-size: 27px;
+  }
+
+  .partners-header p {
+    max-width: 320px;
+    font-size: 12px;
+  }
+
+  .partners-slider {
+    gap: 8px;
+  }
+
+  .partners-track {
+    gap: 25px;
+
+    animation-duration: 12s;
+  }
+
+  .partner-logo {
+    flex-basis: 125px;
+    height: 70px;
+  }
+
+  .partner-logo img {
+    max-width: 105px;
+    max-height: 45px;
+  }
+}
