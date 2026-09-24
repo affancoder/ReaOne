@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import "../CSS/home.css";
 import "../CSS/navbar.css";
 import "../CSS/footer.css";
+import Footer from "./Footer";
 import logo from "../assets/images/logo.png";
 import WhiteBgLogo from "../assets/images/whitebg-logo.png";
 import heroBg from "../assets/images/hero-bg.webp";
@@ -1035,6 +1036,8 @@ function Home() {
           </div>
         </div>
       </div>
+      {/* footer */}
+      <Footer/>
     </main>
   );
 }
