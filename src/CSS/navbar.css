@@ -464,10 +464,6 @@
   transition: color 0.2s ease;
 }
 
-.mobile-main-links a:hover {
-  /* color: #888; */
-}
-
 
 /* ========================================
    MOBILE INNER PAGE HEADER
@@ -651,10 +647,6 @@
   text-decoration: none;
 
   transition: color 0.2s ease;
-}
-
-.dropdown-simple-links a:hover {
-  color: #888;
 }
 
 
