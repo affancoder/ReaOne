@@ -542,10 +542,12 @@
 /* ========================================
    ONE SYSTEM SECTION
 ======================================== */
+/* ========================================
+   ONE SYSTEM SECTION
+======================================== */
 
 .system-section {
   position: relative;
-
   width: 100%;
   min-height: 700px;
 
@@ -553,60 +555,53 @@
 
   background: #000;
 
-  overflow: hidden;
-
-  border-top: linear-gradient(
-    to bottom,
-    #000 0%,
-    rgba(0, 0, 0, 0.95) 35%,
-    rgba(0, 0, 0, 0) 100%
-  );;
+  /* IMPORTANT */
+  overflow: visible;
+  isolation: isolate;
 }
 
+/* BLACK FADE COMING FROM THE TOP */
+.system-section::before {
+  content: "";
 
-
-/* ========================================
-   TOP BLACK GRADIENT
-======================================== */
-
-.system-top-gradient {
   position: absolute;
-  top: 0;
+
   left: 0;
+  right: 0;
+
+  /* Push the gradient ABOVE the black section */
+  top: -180px;
 
   width: 100%;
   height: 180px;
 
-
   background: linear-gradient(
     to bottom,
-    #000 0%,
-    rgba(0, 0, 0, 0.95) 35%,
-    rgba(0, 0, 0, 0) 100%
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.08) 15%,
+    rgba(0, 0, 0, 0.25) 35%,
+    rgba(0, 0, 0, 0.55) 60%,
+    rgba(0, 0, 0, 0.82) 82%,
+    #000 100%
   );
 
   pointer-events: none;
+
+  z-index: -1;
 }
 
 
-/* ========================================
-   CONTENT
-======================================== */
-
+/* CONTENT */
 .system-content {
   position: relative;
   z-index: 2;
 
   width: min(1060px, 100%);
-
   margin: 0 auto;
 }
 
 
-/* ========================================
-   VIDEO
-======================================== */
-
+/* VIDEO */
 .system-video {
   width: 100%;
 
@@ -627,10 +622,7 @@
 }
 
 
-/* ========================================
-   FEATURE ROW
-======================================== */
-
+/* FEATURES */
 .system-features {
   display: grid;
 
@@ -640,11 +632,6 @@
 
   margin-top: 16px;
 }
-
-
-/* ========================================
-   FEATURE
-======================================== */
 
 .system-feature {
   position: relative;
@@ -659,11 +646,6 @@
     color 0.35s ease,
     transform 0.35s ease;
 }
-
-
-/* ========================================
-   FEATURE LINE
-======================================== */
 
 .feature-line {
   position: relative;
@@ -696,11 +678,6 @@
   transition: width 0.45s ease;
 }
 
-
-/* ========================================
-   FEATURE TEXT
-======================================== */
-
 .system-feature h3 {
   margin: 0 0 9px;
 
@@ -712,6 +689,7 @@
   line-height: 1.4;
 
   letter-spacing: 0.7px;
+
   text-transform: uppercase;
 
   transition:
@@ -731,11 +709,6 @@
 
   transition: color 0.35s ease;
 }
-
-
-/* ========================================
-   HOVER
-======================================== */
 
 .system-feature:hover {
   color: #fff;
@@ -763,10 +736,16 @@
 ======================================== */
 
 @media (max-width: 768px) {
+
   .system-section {
     min-height: auto;
 
     padding: 25px 20px 70px;
+  }
+
+  .system-section::before {
+    top: -140px;
+    height: 140px;
   }
 
   .system-features {
@@ -789,6 +768,7 @@
     max-width: 650px;
 
     font-size: 12px;
+
     line-height: 1.7;
   }
 }
@@ -799,11 +779,13 @@
 ======================================== */
 
 @media (max-width: 480px) {
+
   .system-section {
     padding: 20px 16px 55px;
   }
 
-  .system-top-gradient {
+  .system-section::before {
+    top: -120px;
     height: 120px;
   }
 
@@ -817,6 +799,7 @@
 
   .system-feature p {
     font-size: 11px;
+
     line-height: 1.7;
   }
 }
