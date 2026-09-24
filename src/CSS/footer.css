@@ -6,7 +6,7 @@
   width: 100%;
   background: #000;
   color: #fff;
-  padding: 5% 4.2% 50px;
+  padding: 7% 5%;
   overflow: hidden;
 }
 
@@ -36,17 +36,20 @@
 }
 
 .subscribe-btn {
-  margin-top: 32px;
-
-  padding: 14px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  gap: 4px;
+  padding: 12px 26px;
 
   border: 0;
-  border-radius: 3px;
+  border-radius: 4px;
 
   background: #59616c;
   color: #fff;
 
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
 
   cursor: pointer;
@@ -59,6 +62,12 @@
 .subscribe-btn:hover {
   background: #707985;
   transform: translateY(-1px);
+}
+
+.subscribe-btn p{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* ========================================

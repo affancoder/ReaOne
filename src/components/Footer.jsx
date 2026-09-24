@@ -1,4 +1,5 @@
 import "../CSS/footer.css"
+import { CircleArrowRight}  from "lucide-react";
 
 function Footer(){
     return(
@@ -15,7 +16,8 @@ function Footer(){
       </h2>
 
       <button type="button" className="subscribe-btn">
-        Subscribe ⊙
+        <p>Subscribe</p>
+        <p><CircleArrowRight width={18}/></p>
       </button>
     </div>
 
