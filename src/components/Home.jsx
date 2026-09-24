@@ -8,6 +8,7 @@ import WhiteBgLogo from "../assets/images/whitebg-logo.png";
 import heroBg from "../assets/images/hero-bg.webp";
 import f1 from "../assets/images/f1.webp";
 import blacktypex from "../assets/images/black-typeX.webp";
+import typeX from "../assets/images/typeX.webp";
 import microinverter from "../assets/images/microinverter.webp";
 import battery1 from "../assets/images/battery-powerbankX.webp";
 import battery2 from "../assets/images/battery-2.webp";
@@ -753,7 +754,91 @@ function Home() {
         </a>
       </section>
 
-      
+      {/* PRODUCT GRID */}
+
+<section className="product-grid-section">
+
+  <div className="product-grid">
+
+    {/* Card 1 */}
+    <article className="product-card card1">
+      <h3>Type X</h3>
+
+      <p>
+        Up to 550W supercharged by FusionCell. Power, refined.
+      </p>
+
+      <div className="product-buttons">
+        <a href="#quote">Get Quote</a>
+        <a href="#learn-more">Learn More</a>
+      </div>
+
+      <div className="product-image">
+        <img src={typeX} alt="Type X" />
+      </div>
+    </article>
+
+
+    {/* Card 2 */}
+    <article className="product-card">
+      <h3>POWERBANK X</h3>
+
+      <p>
+        The next generation of home energy storage.
+      </p>
+
+      <div className="product-buttons">
+        <a href="#quote">Get Quote</a>
+        <a href="#learn-more">Learn More</a>
+      </div>
+
+      <div className="product-image">
+        <img src={battery1} alt="POWERBANK X" />
+      </div>
+    </article>
+
+
+    {/* Card 3 */}
+    <article className="product-card product-card-dark">
+      <h3>POWERBANK</h3>
+
+      <p>
+        Proven battery storage for energy independence.
+      </p>
+
+      <div className="product-buttons">
+        <a href="#quote">Get Quote</a>
+        <a href="#learn-more">Learn More</a>
+      </div>
+
+      <div className="product-image">
+        <img src={battery2} alt="POWERBANK" />
+      </div>
+    </article>
+
+
+    {/* Card 4 */}
+    <article className="product-card">
+      <h3>Other Batteries</h3>
+
+      <p>
+        Compatible with the solutions you already use.
+      </p>
+
+      <div className="product-buttons">
+        <a href="#quote">Get Quote</a>
+        <a href="#learn-more">Learn More</a>
+      </div>
+
+      <div className="product-image">
+        <img src={battery2} alt="Other Batteries" />
+      </div>
+    </article>
+
+  </div>
+
+</section>
+
     </main>
   );
 }
