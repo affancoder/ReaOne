@@ -8,9 +8,9 @@
   left: 0;
 
   width: 100%;
-  height: 92px;
+  height: 70px;
 
-  padding: 0 3.5%;
+  padding: 0 2%;
 
   display: flex;
   align-items: center;
@@ -77,17 +77,13 @@
 
   color: #fff;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: bold;
 
   cursor: pointer;
 }
 
 .nav-item > span {
   transition: color 0.2s ease;
-}
-
-.nav-item:hover > span {
-  color: #20a9d8;
 }
 
 
@@ -156,7 +152,7 @@
 
 .dropdown-menu {
   position: absolute;
-  top: 92px;
+  top: 70px;
   left: 0;
 
   width: 100%;
@@ -258,7 +254,7 @@
 }
 
 .dropdown-links a:hover {
-  color: #20a9d8;
+  color: #888;
 }
 
 
@@ -468,7 +464,7 @@
 }
 
 .mobile-main-links a:hover {
-  color: #20a9d8;
+  /* color: #888; */
 }
 
 
@@ -559,7 +555,7 @@
 }
 
 .mobile-product-card a {
-  color: #20a9d8;
+  color: #888;
 
   font-size: 13px;
   font-weight: 500;
@@ -657,7 +653,7 @@
 }
 
 .dropdown-simple-links a:hover {
-  color: #20a9d8;
+  color: #888;
 }
 
 
