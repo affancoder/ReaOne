@@ -9,6 +9,7 @@ import heroBg from "../assets/images/hero-bg.webp";
 import f1 from "../assets/images/f1.webp";
 import blacktypex from "../assets/images/black-typeX.webp";
 import typeX from "../assets/images/typeX.webp";
+import PowerBankX from "../assets/images/powerbankX.webp";
 import microinverter from "../assets/images/microinverter.webp";
 import battery1 from "../assets/images/battery-powerbankX.webp";
 import battery2 from "../assets/images/battery-2.webp";
@@ -780,7 +781,7 @@ function Home() {
 
 
     {/* Card 2 */}
-    <article className="product-card">
+    <article className="product-card card2">
       <h3>POWERBANK X</h3>
 
       <p>
@@ -793,7 +794,7 @@ function Home() {
       </div>
 
       <div className="product-image">
-        <img src={battery1} alt="POWERBANK X" />
+        <img src={PowerBankX} alt="POWERBANK X" />
       </div>
     </article>
 
@@ -812,13 +813,13 @@ function Home() {
       </div>
 
       <div className="product-image">
-        <img src={battery2} alt="POWERBANK" />
+        <img src={PowerBankX} alt="POWERBANK" />
       </div>
     </article>
 
 
     {/* Card 4 */}
-    <article className="product-card">
+    <article className="product-card card4">
       <h3>Other Batteries</h3>
 
       <p>
@@ -831,7 +832,7 @@ function Home() {
       </div>
 
       <div className="product-image">
-        <img src={battery2} alt="Other Batteries" />
+        <img src={PowerBankX} alt="Other Batteries" />
       </div>
     </article>
 
