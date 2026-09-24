@@ -1059,7 +1059,7 @@
 
   min-width: 168px;
 
-  padding: 22px 42px;
+  padding: 18px 40px;
 
   border-radius: 25px;
 
@@ -1081,8 +1081,9 @@
 }
 
 .stories-button:hover {
-  background: #202936;
-
+  background: #797e8618;
+  color: #000;
+  border: 1px solid #888;
   transform: translateY(-1px);
 }
 
