@@ -6,6 +6,7 @@ import "../CSS/navbar.css";
 import logo from "../assets/images/logo.png";
 import WhiteBgLogo from "../assets/images/whitebg-logo.png";
 import heroBg from "../assets/images/hero-bg.webp";
+import f1 from "../assets/images/f1.webp";
 import blacktypex from "../assets/images/black-typeX.webp";
 import microinverter from "../assets/images/microinverter.webp";
 import battery1 from "../assets/images/battery-powerbankX.webp";
@@ -669,6 +670,89 @@ function Home() {
             </article>
           </div>
         </div>
+      </section>
+
+      {/* =======
+    CUSTOMER STORIES F1
+=========== */}
+
+      <section className="stories-section">
+        <div className="stories-header">
+          <h2>Over 10,000 Australian Homes Trust REA</h2>
+
+          <p>See what REA customers had to say:</p>
+        </div>
+
+        {/* Testimonial Card */}
+
+        <div className="story-card">
+          <button
+            type="button"
+            className="story-arrow story-arrow-left"
+            aria-label="Previous story"
+          >
+            ‹
+          </button>
+
+          <div className="story-image">
+            <img src={f1} alt="REA customer story" />
+          </div>
+
+          <div className="story-content">
+            <h3>Mark Webber F1 Legend</h3>
+
+            <div className="story-rating">★★★★★</div>
+
+            <p>
+              "First class experience with the REA team, Michael designed a
+              customised solution to meet our energy needs and we have now
+              installed multiple solar and battery systems with them. Best in
+              the industry!"
+            </p>
+          </div>
+
+          <button
+            type="button"
+            className="story-arrow story-arrow-right"
+            aria-label="Next story"
+          >
+            ›
+          </button>
+        </div>
+
+        {/* Slider Dots */}
+
+        <div className="story-dots">
+          <span className="active"></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        {/* Statistics */}
+
+        <div className="story-stats">
+          <div className="story-stat">
+            <strong>#1</strong>
+            <span>Queensland's Top Provider</span>
+          </div>
+
+          <div className="story-stat">
+            <strong>15+</strong>
+            <span>Years of Innovation</span>
+          </div>
+
+          <div className="story-stat">
+            <strong>4.8/5</strong>
+            <span>Google Reviews</span>
+            <small>(522 Reviews)</small>
+          </div>
+        </div>
+
+        {/* CTA */}
+
+        <a href="#customer-stories" className="stories-button">
+          Read Customer Stories
+        </a>
       </section>
     </main>
   );
