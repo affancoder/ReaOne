@@ -10,6 +10,9 @@ import microinverter from "../assets/images/microinverter.webp";
 import battery1 from "../assets/images/battery-powerbankX.webp";
 import battery2 from "../assets/images/battery-2.webp";
 import electric from "../assets/images/electric.mp4";
+import call from "../assets/images/call.png";
+import callwhite from "../assets/images/call-white.png";
+
 
 function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -44,13 +47,14 @@ function Home() {
 
   return (
     <main className="home">
+
       {/* Announcement Bar */}
       <div className="announcement-bar">
         <p>
-          Claim your battery rebate through the Cheaper Home Batteries Program
-        </p>
+          Claim your battery rebate through the Cheaper Home Batteries Program.
+        <span className="responsive-btn">Learn more</span></p>
 
-        <button type="button">Learn more</button>
+          <button type="button" className="desktop-btn">Learn more</button>
       </div>
 
       {/* Navigation */}
@@ -192,8 +196,8 @@ function Home() {
             ?
           </button>
 
-          <button type="button" aria-label="Phone">
-            ◔
+          <button type="button" aria-label="Phone" className="phone">
+            <img src={callwhite} width={18} />
           </button>
 
           <button type="button" aria-label="Contact">
@@ -235,6 +239,12 @@ function Home() {
             </div>
 
             <nav className="mobile-main-links">
+              
+              <button type="button" onClick={() => setMobilePage("solar")}>
+                <span><img src={call} width={16}/> &nbsp;1300 360 047</span>
+                <span></span>
+              </button>
+
               <button type="button" onClick={() => setMobilePage("solar")}>
                 <span>Solar Panels</span>
                 <span>›</span>
@@ -261,19 +271,7 @@ function Home() {
               </button>
             </nav>
 
-            <div className="mobile-menu-actions">
-              <button type="button" aria-label="Help">
-                ?
-              </button>
-
-              <button type="button" aria-label="Phone">
-                ◔
-              </button>
-
-              <button type="button" aria-label="Contact">
-                ○
-              </button>
-            </div>
+            
           </div>
 
           {/* Solar Panels Inner Page */}
@@ -552,6 +550,7 @@ function Home() {
               </a>
             </div>
           </div>
+          
         </div>
       </header>
 
@@ -599,7 +598,7 @@ function Home() {
         </div>
       </section>
 
-      {/* Energy Solution Section */}
+      {/* Energy Solution */}
       <section className="energy-section">
         <div className="energy-overlay"></div>
 
