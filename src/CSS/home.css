@@ -1533,3 +1533,462 @@
     font-size: 5.5px;
   }
 }
+
+/* ========================================
+   PRODUCT SLIDER
+======================================== */
+
+.product-slider-section {
+  position: relative;
+
+  width: 100%;
+
+  padding: 70px 5% 80px;
+
+  background: #000;
+
+  overflow: hidden;
+}
+
+
+/* ========================================
+   SLIDER
+======================================== */
+
+.product-slider {
+  position: relative;
+
+  width: 100%;
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* ========================================
+   WINDOW
+======================================== */
+
+.product-slider-window {
+  width: 100%;
+
+  overflow: hidden;
+
+  border-radius: 8px;
+}
+
+
+/* ========================================
+   TRACK
+======================================== */
+
+.product-slider-track {
+  display: flex;
+
+  width: 100%;
+
+  transition: transform 0.55s ease;
+}
+
+
+/* ========================================
+   SLIDE
+======================================== */
+
+.product-slide {
+  flex: 0 0 100%;
+
+  min-height: 500px;
+
+  padding: 55px 90px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-radius: 8px;
+
+  overflow: hidden;
+}
+
+
+/* ========================================
+   CARD BACKGROUNDS
+======================================== */
+
+.product-slide.card1 {
+  background: linear-gradient(
+    to bottom,
+    #DBF3FA 0%,
+    #ced7da 100%
+  );
+}
+
+.product-slide.card2 {
+  background: linear-gradient(
+    to bottom,
+    #f4f4f4 0%,
+    #dce4e7 100%
+  );
+}
+
+.product-slide.card3 {
+  background: #000;
+}
+
+.product-slide.card4 {
+  background: linear-gradient(
+    to bottom,
+    #f1f1f1 0%,
+    #d7dfe2 100%
+  );
+}
+
+
+/* ========================================
+   CONTENT
+======================================== */
+
+.product-slide-content {
+  width: 45%;
+
+  text-align: left;
+}
+
+.product-slide-content h2 {
+  margin: 0 0 15px;
+
+  color: #111;
+
+  font-size: clamp(28px, 3vw, 44px);
+
+  font-weight: 600;
+
+  letter-spacing: -0.5px;
+}
+
+.product-slide-content p {
+  max-width: 480px;
+
+  margin: 0 0 25px;
+
+  color: #333;
+
+  font-size: 15px;
+
+  line-height: 1.6;
+}
+
+
+/* POWERBANK BLACK CARD */
+
+.product-slide.card3 .product-slide-content h2 {
+  color: #fff;
+}
+
+.product-slide.card3 .product-slide-content p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+
+/* ========================================
+   PRODUCT IMAGE
+======================================== */
+
+.product-slide > img {
+  width: 42%;
+  max-width: 420px;
+
+  height: 360px;
+
+  object-fit: contain;
+
+  display: block;
+}
+
+
+/* ========================================
+   BUTTONS
+======================================== */
+
+.product-slide-buttons {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+}
+
+.product-slide-buttons a {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-width: 100px;
+
+  padding: 9px 18px;
+
+  border-radius: 20px;
+
+  border: 1px solid #111;
+
+  color: #111;
+
+  font-size: 12px;
+
+  text-decoration: none;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.product-slide-buttons a:hover {
+  background: #111;
+
+  color: #fff;
+}
+
+
+/* BLACK CARD BUTTONS */
+
+.product-slide.card3 .product-slide-buttons a {
+  border-color: #fff;
+
+  color: #fff;
+}
+
+.product-slide.card3 .product-slide-buttons a:hover {
+  background: #fff;
+
+  color: #111;
+}
+
+
+/* ========================================
+   ARROWS
+======================================== */
+
+.product-slider-arrow {
+  position: absolute;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  z-index: 5;
+
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+
+  border-radius: 50%;
+
+  background: rgba(0, 0, 0, 0.65);
+
+  color: #fff;
+
+  font-size: 20px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.product-slider-arrow:hover {
+  background: #fff;
+
+  color: #111;
+
+  transform: translateY(-50%) scale(1.05);
+}
+
+.product-slider-prev {
+  left: -24px;
+}
+
+.product-slider-next {
+  right: -24px;
+}
+
+
+/* ========================================
+   DOTS
+======================================== */
+
+.product-slider-dots {
+  margin-top: 25px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+.product-slider-dots button {
+  width: 7px;
+  height: 7px;
+
+  padding: 0;
+
+  border: 0;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.3);
+
+  cursor: pointer;
+
+  transition:
+    width 0.25s ease,
+    background 0.25s ease;
+}
+
+.product-slider-dots button.active {
+  width: 22px;
+
+  border-radius: 10px;
+
+  background: #fff;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 900px) {
+
+  .product-slider-section {
+    padding: 55px 45px 65px;
+  }
+
+  .product-slide {
+    min-height: 450px;
+
+    padding: 45px 55px;
+  }
+
+  .product-slide > img {
+    width: 40%;
+
+    height: 300px;
+  }
+
+  .product-slider-prev {
+    left: -22px;
+  }
+
+  .product-slider-next {
+    right: -22px;
+  }
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+  .product-slider-section {
+    padding: 40px 20px 55px;
+  }
+
+  .product-slide {
+    min-height: 520px;
+
+    padding: 35px 25px;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    text-align: center;
+  }
+
+  .product-slide-content {
+    width: 100%;
+
+    text-align: center;
+  }
+
+  .product-slide-content h2 {
+    font-size: 28px;
+  }
+
+  .product-slide-content p {
+    margin-left: auto;
+    margin-right: auto;
+
+    font-size: 13px;
+  }
+
+  .product-slide-buttons {
+    justify-content: center;
+  }
+
+  .product-slide > img {
+    width: 70%;
+
+    height: 260px;
+  }
+
+  .product-slider-arrow {
+    width: 38px;
+    height: 38px;
+
+    font-size: 16px;
+  }
+
+  .product-slider-prev {
+    left: -10px;
+  }
+
+  .product-slider-next {
+    right: -10px;
+  }
+}
+
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 380px) {
+
+  .product-slide {
+    min-height: 480px;
+
+    padding: 30px 18px;
+  }
+
+  .product-slide > img {
+    width: 65%;
+
+    height: 220px;
+  }
+
+  .product-slide-content h2 {
+    font-size: 25px;
+  }
+
+  .product-slide-content p {
+    font-size: 12px;
+  }
+}

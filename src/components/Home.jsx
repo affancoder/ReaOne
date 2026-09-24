@@ -9,6 +9,7 @@ import heroBg from "../assets/images/hero-bg.webp";
 import f1 from "../assets/images/f1.webp";
 import blacktypex from "../assets/images/black-typeX.webp";
 import typeX from "../assets/images/typeX.webp";
+import monitoring from "../assets/images/monitoring.webp";
 import PowerBankX from "../assets/images/powerbankX.webp";
 import microinverter from "../assets/images/microinverter.webp";
 import battery1 from "../assets/images/battery-powerbankX.webp";
@@ -47,6 +48,16 @@ function Home() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev === 3 ? 0 : prev + 1));
+  };
+
+  const previousSlide = () => {
+    setCurrentSlide((prev) => (prev === 0 ? 3 : prev - 1));
+  };
 
   return (
     <main className="home">
@@ -757,89 +768,184 @@ function Home() {
 
       {/* PRODUCT GRID */}
 
-<section className="product-grid-section">
+      <section className="product-grid-section">
+        <div className="product-grid">
+          {/* Card 1 */}
+          <article className="product-card card1">
+            <h3>Type X</h3>
 
-  <div className="product-grid">
+            <p>Up to 550W supercharged by FusionCell. Power, refined.</p>
 
-    {/* Card 1 */}
-    <article className="product-card card1">
-      <h3>Type X</h3>
+            <div className="product-buttons">
+              <a href="#quote">Get Quote</a>
+              <a href="#learn-more">Learn More</a>
+            </div>
 
-      <p>
-        Up to 550W supercharged by FusionCell. Power, refined.
-      </p>
+            <div className="product-image">
+              <img src={typeX} alt="Type X" />
+            </div>
+          </article>
 
-      <div className="product-buttons">
-        <a href="#quote">Get Quote</a>
-        <a href="#learn-more">Learn More</a>
-      </div>
+          {/* Card 2 */}
+          <article className="product-card card2">
+            <h3>POWERBANK X</h3>
 
-      <div className="product-image">
-        <img src={typeX} alt="Type X" />
-      </div>
-    </article>
+            <p>The next generation of home energy storage.</p>
 
+            <div className="product-buttons">
+              <a href="#quote">Get Quote</a>
+              <a href="#learn-more">Learn More</a>
+            </div>
 
-    {/* Card 2 */}
-    <article className="product-card card2">
-      <h3>POWERBANK X</h3>
+            <div className="product-image">
+              <img src={PowerBankX} alt="POWERBANK X" />
+            </div>
+          </article>
 
-      <p>
-        The next generation of home energy storage.
-      </p>
+          {/* Card 3 */}
+          <article className="product-card product-card-dark">
+            <h3>POWERBANK</h3>
 
-      <div className="product-buttons">
-        <a href="#quote">Get Quote</a>
-        <a href="#learn-more">Learn More</a>
-      </div>
+            <p>Proven battery storage for energy independence.</p>
 
-      <div className="product-image">
-        <img src={PowerBankX} alt="POWERBANK X" />
-      </div>
-    </article>
+            <div className="product-buttons">
+              <a href="#quote">Get Quote</a>
+              <a href="#learn-more">Learn More</a>
+            </div>
 
+            <div className="product-image">
+              <img src={PowerBankX} alt="POWERBANK" />
+            </div>
+          </article>
 
-    {/* Card 3 */}
-    <article className="product-card product-card-dark">
-      <h3>POWERBANK</h3>
+          {/* Card 4 */}
+          <article className="product-card card4">
+            <h3>Other Batteries</h3>
 
-      <p>
-        Proven battery storage for energy independence.
-      </p>
+            <p>Compatible with the solutions you already use.</p>
 
-      <div className="product-buttons">
-        <a href="#quote">Get Quote</a>
-        <a href="#learn-more">Learn More</a>
-      </div>
+            <div className="product-buttons">
+              <a href="#quote">Get Quote</a>
+              <a href="#learn-more">Learn More</a>
+            </div>
 
-      <div className="product-image">
-        <img src={PowerBankX} alt="POWERBANK" />
-      </div>
-    </article>
+            <div className="product-image">
+              <img src={PowerBankX} alt="Other Batteries" />
+            </div>
+          </article>
+        </div>
+      </section>
 
+      {/* ===== PRODUCT SLIDER ===== */}
 
-    {/* Card 4 */}
-    <article className="product-card card4">
-      <h3>Other Batteries</h3>
+      <section className="product-slider-section">
+        <div className="product-slider">
+          <button
+            type="button"
+            className="product-slider-arrow product-slider-prev"
+            onClick={previousSlide}
+            aria-label="Previous product"
+          >
+            ←
+          </button>
 
-      <p>
-        Compatible with the solutions you already use.
-      </p>
+          <div className="product-slider-window">
+            <div
+              className="product-slider-track"
+              style={{
+                transform: `translateX(-${currentSlide * 100}%)`,
+              }}
+            >
+              {/* SLIDE 1 */}
+              <div className="product-slide card1">
+                <div className="product-slide-content">
+                  <h2>Smart Monitoring</h2>
 
-      <div className="product-buttons">
-        <a href="#quote">Get Quote</a>
-        <a href="#learn-more">Learn More</a>
-      </div>
+                  <p>Track your energy use and savings in real time.</p>
 
-      <div className="product-image">
-        <img src={PowerBankX} alt="Other Batteries" />
-      </div>
-    </article>
+                  <div className="product-slide-buttons">
+                    <a href="#details">Get Quote</a>
+                    <a href="#learn-more">Learn More</a>
+                  </div>
+                </div>
 
-  </div>
+                <img src={monitoring} alt="Type X" />
+              </div>
 
-</section>
+              {/* SLIDE 2 */}
+              <div className="product-slide card2">
+                <div className="product-slide-content">
+                  <h2>POWERBANK X</h2>
 
+                  <p>The next generation of home energy storage.</p>
+
+                  <div className="product-slide-buttons">
+                    <a href="#details">Get Quote</a>
+                    <a href="#learn-more">Learn More</a>
+                  </div>
+                </div>
+
+                <img src={battery1} alt="POWERBANK X" />
+              </div>
+
+              {/* SLIDE 3 */}
+              <div className="product-slide card3">
+                <div className="product-slide-content">
+                  <h2>POWERBANK</h2>
+
+                  <p>Power your home with smarter energy independence.</p>
+
+                  <div className="product-slide-buttons">
+                    <a href="#details">Get Quote</a>
+                    <a href="#learn-more">Learn More</a>
+                  </div>
+                </div>
+
+                <img src={battery2} alt="POWERBANK" />
+              </div>
+
+              {/* SLIDE 4 */}
+              <div className="product-slide card4">
+                <div className="product-slide-content">
+                  <h2>Other Batteries</h2>
+
+                  <p>Compatible with the best battery solutions.</p>
+
+                  <div className="product-slide-buttons">
+                    <a href="#details">Get Quote</a>
+                    <a href="#learn-more">Learn More</a>
+                  </div>
+                </div>
+
+                <img src={battery2} alt="Other Batteries" />
+              </div>
+            </div>
+          </div>
+
+          <button
+            type="button"
+            className="product-slider-arrow product-slider-next"
+            onClick={nextSlide}
+            aria-label="Next product"
+          >
+            →
+          </button>
+        </div>
+
+        {/* Dots */}
+
+        <div className="product-slider-dots">
+          {[0, 1, 2, 3].map((index) => (
+            <button
+              key={index}
+              type="button"
+              className={currentSlide === index ? "active" : ""}
+              onClick={() => setCurrentSlide(index)}
+              aria-label={`Go to product ${index + 1}`}
+            />
+          ))}
+        </div>
+      </section>
     </main>
   );
 }
